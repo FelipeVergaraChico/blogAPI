@@ -18,7 +18,6 @@ const userRegister = async ({ displayName, email, password, image }) => {
   const token = generateToken(email, displayName, image);
   return { status: 'CREATED', data: { token } };
 };
-
 const getById = async (id) => {
   const user = await User.findOne({ where: { id }, attributes: { exclude: ['password'] } });
   if (!user) {
@@ -26,6 +25,7 @@ const getById = async (id) => {
   }
   return { status: 'OK', data: user };
 };
+
 module.exports = {
   userRegister,
   getAll,

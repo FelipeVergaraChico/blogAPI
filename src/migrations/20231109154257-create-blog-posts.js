@@ -26,12 +26,13 @@ module.exports = {
     }
   },
   published: {
-    allowNull: false,
-    type: Sequelize.DATE
+    type: Sequelize.DATE,
+    default: Sequelize.DATE()
   },
   updated: {
     allowNull: false,
-    type: Sequelize.DATE
+    type: Sequelize.DATE,
+    default: Sequelize.DATE()
   }
     });
   },
